@@ -1,0 +1,188 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color:white;
+    color:rgb(10, 25, 47);
+    padding-top: 80px;
+}
+
+@font-face {
+    font-family: cali;
+    src: url(GreatVibes-Regular.ttf);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-left: 10px;
+}
+
+.motto {
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    font-family:cali;
+    margin-top: 12px;
+}
+
+header nav{
+    background-color: rgb(10, 55, 64);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+h1 { font-size: 28px; }
+
+header nav h1 { font-size: 26px; font-weight:700; letter-spacing: 2px; }
+
+header nav form {
+    display: flex;
+    justify-content: center;
+}
+
+form input[type='text'], button[type='submit'] {
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form input[type='text'] { flex-grow: 1; margin-right: 10px; }
+
+form button[type='submit'] {
+    background-color: rgb(63,111,124);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form button[type='submit']:hover { background-color: rgb(76, 125, 138); }
+
+.recipe-container {
+    text-align: center;
+    margin: 10px auto;
+    padding: 20px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    place-items: center;
+}
+
+.recipe {
+    background-color: #dedede;
+    color: black;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(78,73,73,0.1), -5px -5px 10px rgba(34,34,34,0.5);
+    cursor: pointer;
+    max-width: 350px;
+    transition: transform 0.4s;
+}
+
+.recipe:hover { transform: scale(1.05); }
+
+.recipe img { height: 350px; }
+
+.recipe h3 { font-size: 24px; margin-block: 2px; }
+
+.recipe p { color: #0e0221; margin: 2px 0; }
+
+.recipe span { font-weight: 600; }
+
+.recipe button {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 18px auto;
+    background-color: rgb(139, 208, 209);
+}
+
+.recipe button:hover { background-color: rgb(67, 157, 159); }
+
+.recipe-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(63,111,124);
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    overflow-y: scroll;
+}
+
+.recipe-details-content { padding: 30px; }
+
+.recipeName { text-align: center; font-size: 35px; text-decoration: underline; padding-bottom: 7px; }
+
+.ingredientList li { margin-top: 10px; margin-left: 20px; }
+
+.recipeInstructions p { line-height: 30px; white-space: pre-line; }
+
+.recipe-details::-webkit-scrollbar { width: 10px; }
+
+.recipe-details::-webkit-scrollbar-thumb {
+    background-color: #b5b5ba;
+    border-radius: 16px;
+}
+
+.recipe-close-btn {
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-close-btn:hover { background-color: rgb(232, 31, 31); }
+
+@media (max-width: 768px) {
+    .recipe-details { width: 85%; max-height: 85vh; font-size: 16px; padding: 15px; top:350px; }
+    .recipeName { font-size: 24px; }
+    .ingredientList li, .recipeInstructions p { font-size: 16px; }
+    .recipe-close-btn { font-size: 14px; }
+    .recipe-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); grid-gap: 20px; }
+    .recipe img { height: 250px; }
+    .recipe h3 { font-size: 20px; }
+    .recipe button { font-size: 16px; }
+}
+
+@media (max-width: 600px) {
+    header nav { flex-direction: column; align-items: center; text-align: center; padding: 15px; }
+    h1 { font-size: 24px; margin-bottom: 10px; }
+    header nav form { width: 90%; gap: 5px; }
+    form input[type='text'] { width: 100%; font-size: 16px; border-radius: 5px; }
+    form button[type='submit'] { padding: 10px 15px; font-size: 16px; }
+    .logo-container { flex-direction: column; gap: 0; align-items: center; }
+    .motto { margin-top: 0; padding-bottom: 12px; }
+    body { padding-top: 140px; }
+    /* h2{
+        padding-top: 80px;
+    } */
+}
